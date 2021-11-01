@@ -16,12 +16,12 @@ public class FluxFilterTest {
     public void filterTest() {
         Flux<String> stringFlux = Flux.fromIterable(names)
                 .map(String::toLowerCase)
-                .filter(s -> s.startsWith("j"))
+                .filter(s -> s.startsWith("d"))
                 .filter(s -> s.length() > 4)
                 .log();
 
         StepVerifier.create(stringFlux)
-                .expectNext("jenny")
+                .expectNext("delgado")
                 .verifyComplete();
 
     }
